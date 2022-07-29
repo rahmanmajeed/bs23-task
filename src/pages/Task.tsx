@@ -2,7 +2,7 @@ import React from "react";
 
 function Task() {
   return (
-    <div>
+    <div className="">
       <span>task page</span>
     </div>
   );
