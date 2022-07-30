@@ -4,7 +4,7 @@ const initialTaskState = {
       id: 1,
       title: "demo task 01",
       description: "task 01 description",
-      assign_to: "",
+      assign_to: "1",
       created_at: new Date().toDateString(),
     },
     {
