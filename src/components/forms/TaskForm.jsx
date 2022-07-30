@@ -6,7 +6,7 @@ import { createTask, updateTask } from "../../store/tasks/action";
 const taskInputReducer = (state, action) => {
     switch (action.type) {
       case "TITLE":
-        return {...state, title: action.value.trim()};
+        return {...state, title: action.value};
     
       case "DESCRIPTION":
         
@@ -62,7 +62,8 @@ function TaskForm({task, mode }) {
   };
 
   const validate = (taskInput) => {
-    if (taskInput.title.length > 1) {
+    const validInput = taskInput.title.trim();
+    if (validInput.length > 1) {
       setIsValided(false);
       return false;
     } else {
@@ -108,7 +109,7 @@ function TaskForm({task, mode }) {
           ></textarea>
         </div>
         <div>
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">Assign to</label>
           <select
             name="assign_to"
             id=""
