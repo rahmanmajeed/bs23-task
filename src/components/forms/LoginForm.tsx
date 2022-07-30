@@ -6,7 +6,9 @@ import { setUserLoggedIn } from "../../store/global/actions";
 function LoginForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isLoggedIn, userData } = useSelector((state: any) => state.global);
+  const { isLoggedIn, userData, app } = useSelector(
+    (state: any) => state.global
+  );
   const [errorMessages, setErrorMessages] = useState("");
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -35,7 +37,7 @@ function LoginForm() {
 
   return (
     <div className="flex flex-col justify-center items-center m-10">
-      <p className="text-center text-3xl font-bold">Login</p>
+      <p className="text-center text-3xl font-bold">Login {app}</p>
       <div className="bg-slate-100 w-1/5 h-64 m-6 rounded-sm border border-slate-100 shadow-lg flex flex-col gap-9 justify-center items-center px-5 py-5">
         <form onSubmit={handleLogin}>
           <div className="text-rose-800 font-medium text-center">

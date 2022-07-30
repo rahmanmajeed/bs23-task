@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Private from "./components/Private";
 import Header from "./components/shared/Header";
 import Layout from "./components/shared/Layout";
+import TaskCreate from "./components/task/Create";
+import List from "./components/task/List";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Task from "./pages/Task";
@@ -24,8 +26,11 @@ function App() {
             <Route path="/" element={<Login />} />
 
             <Route path="/*" element={<Private />}>
+              {/** dashboard route */}
               <Route path="dashboard" element={<Dashboard />} />
+              {/** tasks route */}
               <Route path="tasks" element={<Task />} />
+              <Route path="tasks/create" element={<TaskCreate />} />
             </Route>
           </Routes>
         </div>
