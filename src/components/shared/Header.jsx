@@ -28,7 +28,7 @@ function Header() {
 
           {/** dropdown menu */}
           <div class="flex gap-3 justify-between ">
-            <button type="button" className="hover:bg-slate-600 h-full p-4" onClick={handleLogout}>{currentLoggedUser?.username} &#x276F;</button>
+            <button type="button" className="hover:bg-slate-600 h-full p-4" onClick={handleLogout}>{currentLoggedUser?.username} &#x276F; {'logout'}</button>
             </div>
            
         </div>

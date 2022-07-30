@@ -21,7 +21,7 @@ const memberReducer = (state = initialMemberState, action: any) => {
     case "UPDATE_MEMBER_INFO":
       return {
         ...state,
-        tasks: [
+        members: [
           ...state.members.filter((member) => member.id != action.payload.id),
           action.payload,
         ],
@@ -29,8 +29,8 @@ const memberReducer = (state = initialMemberState, action: any) => {
     case "DELETE_MEMBER":
       return {
         ...state,
-        tasks: [
-          ...state.members.filter((member) => member.id != action.payload.id),
+        members: [
+          ...state.members.filter((member) => member != action.payload),
         ],
       };
 

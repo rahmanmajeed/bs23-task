@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const getAllMembers = () => async (dispatch: any) => {
   dispatch({});
 };
@@ -15,6 +17,7 @@ export const createMember = (payload: any) => async (dispatch: any) => {
     type: "CREATE_NEW_MEMBER",
     payload,
   });
+  toast.success("member create successfully");
 };
 
 /**
@@ -28,6 +31,8 @@ export const updateMemberInfo = (payload: any) => async (dispatch: any) => {
     type: "UPDATE_MEMBER_INFO",
     payload,
   });
+
+  toast.success("member info update successfully");
 };
 
 /**
@@ -40,4 +45,6 @@ export const deleteMember = (payload: any) => async (dispatch: any) => {
     type: "DELETE_MEMBER",
     payload,
   });
+
+  toast.error("member deleted !!");
 };

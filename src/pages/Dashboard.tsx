@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -14,6 +15,9 @@ function Dashboard() {
         break;
     }
   };
+  useEffect(() => {
+    toast.success("Welcome to Dashboard");
+  }, []);
   return (
     <div className="p-10 flex justify-center items-center gap-10">
       <button

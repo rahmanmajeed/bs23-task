@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const getAllTasks = () => async (dispatch: any) => {
   dispatch({});
 };
@@ -15,6 +17,7 @@ export const createTask = (payload: any) => async (dispatch: any) => {
     type: "CREATE_TASK",
     payload,
   });
+  toast.success("task create successfully");
 };
 
 /**
@@ -28,6 +31,7 @@ export const updateTask = (payload: any) => async (dispatch: any) => {
     type: "UPDATE_TASK",
     payload,
   });
+  toast.success("task updated successfully");
 };
 
 /**
@@ -40,4 +44,5 @@ export const deleteTask = (payload: any) => async (dispatch: any) => {
     type: "DELETE_TASK",
     payload,
   });
+  toast.success("task deleted !!!");
 };
