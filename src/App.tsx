@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Private from "./components/Private";
-import Header from "./components/shared/Header";
 import Layout from "./components/shared/Layout";
 import TaskCreate from "./components/task/Create";
-import List from "./components/task/List";
+import TaskUpdate from "./components/task/Update";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Task from "./pages/Task";
@@ -31,6 +29,7 @@ function App() {
               {/** tasks route */}
               <Route path="tasks" element={<Task />} />
               <Route path="tasks/create" element={<TaskCreate />} />
+              <Route path="tasks/update/:id" element={<TaskUpdate />} />
             </Route>
           </Routes>
         </div>
